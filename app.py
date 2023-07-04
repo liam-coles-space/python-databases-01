@@ -26,4 +26,11 @@ albums = album_repository.all()
 for album in albums:
     print(album)
 
+# Find specific album
+album_repository = AlbumRepository(connection)
+album = album_repository.find(5)
+
+#print it out
+print(album)
+
 

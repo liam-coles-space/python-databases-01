@@ -21,3 +21,15 @@ def test_get_all_records(db_connection):
         Album(11, 'Fodder on My Wings', 1982, 4),
         Album(12, 'Ring Ring', 1973, 2)
     ]
+
+
+#When i call the find method with an ID i get a album object back based on the row in the albums table that has the matching ID
+
+def test_find_record_method(db_connection):
+    db_connection.seed("seeds/music_library.sql") # Seed our database with some test data
+    repository = AlbumRepository(db_connection) # Create a new AlbumRepository
+
+    album = repository.find(3)
+
+    assert album == Album(3, 'Waterloo', 1974, 2)
+
