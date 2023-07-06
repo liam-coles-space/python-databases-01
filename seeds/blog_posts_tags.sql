@@ -1,3 +1,12 @@
+DROP TABLE IF EXISTS "public"."posts_tags";
+-- This script only contains the table creation statements and does not fully represent the table in the database. It's still missing: indices, triggers. Do not use it as a backup.
+
+-- Table Definition
+CREATE TABLE "public"."posts_tags" (
+    "post_id" int4,
+    "tag_id" int4
+);
+
 DROP TABLE IF EXISTS "public"."posts";
 -- This script only contains the table creation statements and does not fully represent the table in the database. It's still missing: indices, triggers. Do not use it as a backup.
 
@@ -6,15 +15,6 @@ CREATE TABLE "public"."posts" (
     "id" SERIAL,
     "title" text,
     PRIMARY KEY ("id")
-);
-
-DROP TABLE IF EXISTS "public"."posts_tags";
--- This script only contains the table creation statements and does not fully represent the table in the database. It's still missing: indices, triggers. Do not use it as a backup.
-
--- Table Definition
-CREATE TABLE "public"."posts_tags" (
-    "post_id" int4,
-    "tag_id" int4
 );
 
 DROP TABLE IF EXISTS "public"."tags";
@@ -29,7 +29,7 @@ CREATE TABLE "public"."tags" (
 
 INSERT INTO "public"."posts" ("title") VALUES
 ('How to use Git'),
-('Fun classes'),
+('Python classes'),
 ('Using a REPL'),
 ('My weekend in Edinburgh'),
 ('The best chocolate cake EVER'),
